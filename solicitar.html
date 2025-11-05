@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de solicitud de crédito - FinanCredit">
+    <title>Solicitar Crédito | FinanCredit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">💳 FinanCredit</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="simulador.html" class="nav-link">Simulador</a>
+                </li>
+                <li class="nav-item">
+                    <a href="solicitar.html" class="nav-link active btn-solicitar">Solicitar Crédito</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-small">
+        <div class="hero-content">
+            <h1>Solicitar Crédito</h1>
+            <p>Completa el formulario y te contactaremos en breve</p>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="solicitud-section">
+            <div class="container">
+                <!-- Progreso del Formulario -->
+                <div class="progress-container">
+                    <div class="progress-item active" data-step="1">
+                        <span class="progress-number">1</span>
+                        <span class="progress-label">Datos Personales</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-item" data-step="2">
+                        <span class="progress-number">2</span>
+                        <span class="progress-label">Información Laboral</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-item" data-step="3">
+                        <span class="progress-number">3</span>
+                        <span class="progress-label">Detalles del Crédito</span>
+                    </div>
+                </div>
+
+                <!-- Formulario de Solicitud -->
+                <form class="solicitud-form" id="solicitudForm">
+                    <!-- PASO 1: Datos Personales -->
+                    <fieldset class="form-step active" id="step1">
+                        <legend>Datos Personales</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo *</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez García" required>
+                                <small class="form-error" id="errorNombre"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+                                <small class="form-error" id="errorEmail"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+1 (555) 123-4567" required>
+                                <small class="form-error" id="errorTelefono"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="documento">Cédula/Documento *</label>
+                                <input type="text" id="documento" name="documento" placeholder="1234567890" required>
+                                <small class="form-error" id="errorDocumento"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fechaNacimiento">Fecha de Nacimiento *</label>
+                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+                                <small class="form-error" id="errorFechaNacimiento"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="genero">Género *</label>
+                                <select id="genero" name="genero" required>
+                                    <option value="">Selecciona tu género</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección *</label>
+                            <input type="text" id="direccion" name="direccion" placeholder="Calle Principal 123, Apt 4B" required>
+                            <small class="form-error" id="errorDireccion"></small>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad *</label>
+                                <input type="text" id="ciudad" name="ciudad" placeholder="Nueva York" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pais">País *</label>
+                                <input type="text" id="pais" name="pais" placeholder="Estados Unidos" required>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary" onclick="nextStep(2)">Siguiente</button>
+                        </div>
+                    </fieldset>
+
+                    <!-- PASO 2: Información Laboral -->
+                    <fieldset class="form-step" id="step2">
+                        <legend>Información Laboral</legend>
+                        
+                        <div class="form-group">
+                            <label for="estadoLaboral">Estado Laboral *</label>
+                            <select id="estadoLaboral" name="estadoLaboral" required>
+                                <option value="">Selecciona tu estado laboral</option>
+                                <option value="empleado">Empleado</option>
+                                <option value="independiente">Independiente</option>
+                                <option value="empresario">Empresario</option>
+                                <option value="jubilado">Jubilado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ocupacion">Ocupación/Profesión *</label>
+                            <input type="text" id="ocupacion" name="ocupacion" placeholder="Ingeniero de Sistemas" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="empresa">Nombre de la Empresa/Institución *</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="TechCorp International" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ingresoBruto">Ingreso Bruto Mensual ($) *</label>
+                                <input type="number" id="ingresoBruto" name="ingresoBruto" placeholder="3500" step="100" required>
+                                <small class="form-error" id="errorIngreso"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="antiguedad">Antigüedad en el Trabajo (años) *</label>
+                                <input type="number" id="antiguedad" name="antiguedad" placeholder="5" step="0.5" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dependientes">Número de Dependientes *</label>
+                            <select id="dependientes" name="dependientes" required>
+                                <option value="">Selecciona cantidad</option>
+                                <option value="0">Ninguno</option>
+                                <option value="1">1 Dependiente</option>
+                                <option value="2">2 Dependientes</option>
+                                <option value="3">3 Dependientes</option>
+                                <option value="4">4 o más Dependientes</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="nextStep(1)">Atrás</button>
+                            <button type="button" class="btn-primary" onclick="nextStep(3)">Siguiente</button>
+                        </div>
+                    </fieldset>
+
+                    <!-- PASO 3: Detalles del Crédito -->
+                    <fieldset class="form-step" id="step3">
+                        <legend>Detalles del Crédito Solicitado</legend>
+                        
+                        <div class="form-group">
+                            <label for="tipoCredito">Tipo de Crédito Solicitado *</label>
+                            <select id="tipoCredito" name="tipoCredito" required>
+                                <option value="">Selecciona un tipo de crédito</option>
+                                <option value="personal">Crédito Personal</option>
+                                <option value="automotriz">Crédito Automotriz</option>
+                                <option value="hipotecario">Crédito Hipotecario</option>
+                                <option value="empresarial">Crédito Empresarial</option>
+                                <option value="educativo">Crédito Educativo</option>
+                                <option value="linea">Línea de Crédito</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="montoCredito">Monto Solicitado ($) *</label>
+                                <input type="number" id="montoCredito" name="montoCredito" placeholder="25000" step="100" required>
+                                <small class="form-error" id="errorMonto"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="plazoCredito">Plazo Deseado (meses) *</label>
+                                <input type="number" id="plazoCredito" name="plazoCredito" placeholder="60" step="12" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="proposito">Propósito del Crédito *</label>
+                            <textarea id="proposito" name="proposito" placeholder="Describe brevemente el propósito del crédito" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="terminos" id="terminos" required>
+                                <span>Acepto los Términos y Condiciones *</span>
+                            </label>
+                            <small class="form-error" id="errorTerminos"></small>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="privacidad" id="privacidad" required>
+                                <span>Acepto la Política de Privacidad *</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="publicidad" id="publicidad">
+                                <span>Deseo recibir información sobre nuevos productos</span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="nextStep(2)">Atrás</button>
+                            <button type="submit" class="btn-primary btn-block">Enviar Solicitud</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <!-- Mensaje de confirmación -->
+                <div id="mensajeExito" class="mensaje-exito hidden">
+                    <div class="exito-content">
+                        <div class="exito-icon">✓</div>
+                        <h2>¡Solicitud Enviada con Éxito!</h2>
+                        <p>Hemos recibido tu solicitud de crédito. Nos pondremos en contacto contigo en las próximas 24 horas.</p>
+                        <p><strong>Número de solicitud:</strong> <span id="numeroSolicitud"></span></p>
+                        <a href="index.html" class="btn-primary">Volver al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FinanCredit</h4>
+                    <p>Soluciones de crédito confiables y accesibles para todos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="solicitar.html">Solicitar Crédito</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@finanCredit.com</p>
+                    <p>Teléfono: +1 (555) 123-4567</p>
+                    <p>Horario: Lunes - Viernes, 8am - 6pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinanCredit. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

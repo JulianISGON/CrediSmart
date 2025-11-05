@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de gestión de solicitudes de crédito - Catálogo de productos crediticios">
+    <title>Gestión de Créditos | Catálogo de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">💳 FinanCredit</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="simulador.html" class="nav-link">Simulador</a>
+                </li>
+                <li class="nav-item">
+                    <a href="solicitar.html" class="nav-link btn-solicitar">Solicitar Crédito</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Principal -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Soluciones de Crédito a Tu Medida</h1>
+            <p>Accede a productos financieros diseñados para ti con las mejores tasas del mercado</p>
+            <a href="solicitar.html" class="cta-button">Solicitar Crédito Ahora</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección de Productos -->
+        <section class="productos-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestros Productos Crediticios</h2>
+                    <p>Elige el crédito que mejor se adapte a tus necesidades</p>
+                </div>
+
+                <div class="productos-grid">
+                    <!-- Producto 1: Crédito Personal -->
+                    <article class="producto-card">
+                        <div class="producto-icon">📊</div>
+                        <h3>Crédito Personal</h3>
+                        <p class="producto-descripcion">Financiamiento flexible para tus proyectos personales sin garantías adicionales</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $5,000 - $50,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> 12 - 60 meses
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 8.5% - 12.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=personal" class="producto-button">Simular</a>
+                    </article>
+
+                    <!-- Producto 2: Crédito Automotriz -->
+                    <article class="producto-card">
+                        <div class="producto-icon">🚗</div>
+                        <h3>Crédito Automotriz</h3>
+                        <p class="producto-descripcion">Financia tu vehículo nuevo o usado con tasas especiales y proceso rápido</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $15,000 - $200,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> 24 - 84 meses
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 6.5% - 9.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=automotriz" class="producto-button">Simular</a>
+                    </article>
+
+                    <!-- Producto 3: Crédito Hipotecario -->
+                    <article class="producto-card">
+                        <div class="producto-icon">🏠</div>
+                        <h3>Crédito Hipotecario</h3>
+                        <p class="producto-descripcion">Materializa el sueño de tu hogar con las mejores condiciones del mercado</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $100,000 - $1,000,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> 120 - 360 meses
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 4.5% - 7.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=hipotecario" class="producto-button">Simular</a>
+                    </article>
+
+                    <!-- Producto 4: Crédito Empresarial -->
+                    <article class="producto-card">
+                        <div class="producto-icon">💼</div>
+                        <h3>Crédito Empresarial</h3>
+                        <p class="producto-descripcion">Impulsa el crecimiento de tu negocio con financiamiento adaptado</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $50,000 - $500,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> 12 - 120 meses
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 7.5% - 11.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=empresarial" class="producto-button">Simular</a>
+                    </article>
+
+                    <!-- Producto 5: Crédito Educativo -->
+                    <article class="producto-card">
+                        <div class="producto-icon">🎓</div>
+                        <h3>Crédito Educativo</h3>
+                        <p class="producto-descripcion">Invierte en tu futuro profesional con tasas preferenciales para estudiantes</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $5,000 - $100,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> 12 - 120 meses
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 3.5% - 6.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=educativo" class="producto-button">Simular</a>
+                    </article>
+
+                    <!-- Producto 6: Línea de Crédito -->
+                    <article class="producto-card">
+                        <div class="producto-icon">💰</div>
+                        <h3>Línea de Crédito</h3>
+                        <p class="producto-descripcion">Acceso a crédito revolving para tus necesidades de corto plazo</p>
+                        <div class="producto-detalles">
+                            <span class="detalle">
+                                <strong>Monto:</strong> $5,000 - $150,000
+                            </span>
+                            <span class="detalle">
+                                <strong>Plazo:</strong> Revolving
+                            </span>
+                            <span class="detalle">
+                                <strong>Tasa:</strong> 9.5% - 15.5% anual
+                            </span>
+                        </div>
+                        <a href="simulador.html?producto=linea" class="producto-button">Simular</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Características -->
+        <section class="caracteristicas-section">
+            <div class="container">
+                <h2>¿Por qué elegirnos?</h2>
+                <div class="caracteristicas-grid">
+                    <div class="caracteristica">
+                        <div class="caracteristica-icon">⚡</div>
+                        <h3>Aprobación Rápida</h3>
+                        <p>Respuesta en menos de 24 horas para tu solicitud</p>
+                    </div>
+                    <div class="caracteristica">
+                        <div class="caracteristica-icon">🔒</div>
+                        <h3>Seguridad Garantizada</h3>
+                        <p>Tus datos están protegidos con encriptación SSL</p>
+                    </div>
+                    <div class="caracteristica">
+                        <div class="caracteristica-icon">👨‍💼</div>
+                        <h3>Asesoría Personalizada</h3>
+                        <p>Equipo de expertos disponible para ayudarte</p>
+                    </div>
+                    <div class="caracteristica">
+                        <div class="caracteristica-icon">📱</div>
+                        <h3>Disponible 24/7</h3>
+                        <p>Accede desde cualquier dispositivo, en cualquier momento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Testimonios -->
+        <section class="testimonios-section">
+            <div class="container">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="testimonios-grid">
+                    <blockquote class="testimonio">
+                        <p>"Proceso muy simple y rápido. En 2 días ya tenía el dinero en mi cuenta"</p>
+                        <footer>
+                            <strong>Carlos M.</strong>
+                            <span>Crédito Personal</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonio">
+                        <p>"Las mejores tasas que encontré. Muy recomendado para quienes necesitan financiamiento"</p>
+                        <footer>
+                            <strong>María L.</strong>
+                            <span>Crédito Automotriz</span>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="testimonio">
+                        <p>"Excelente atención al cliente. Resolvieron todas mis dudas con profesionalismo"</p>
+                        <footer>
+                            <strong>Juan P.</strong>
+                            <span>Crédito Empresarial</span>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FinanCredit</h4>
+                    <p>Soluciones de crédito confiables y accesibles para todos</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="simulador.html">Simulador</a></li>
+                        <li><a href="solicitar.html">Solicitar Crédito</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Email: info@finanCredit.com</p>
+                    <p>Teléfono: +1 (555) 123-4567</p>
+                    <p>Horario: Lunes - Viernes, 8am - 6pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinanCredit. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
