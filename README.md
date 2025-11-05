@@ -2,10 +2,10 @@
 
 ## 📋 Información del Proyecto
 
-**Estudiante:** Julian ISGON  
-**Institución:** Universidad [Tu Universidad]  
-**Asignatura:** Desarrollo Web Responsivo  
-**Fecha de Entrega:** Noviembre 5, 2025  
+**Estudiante:** Lisa Mariana Larrea - Julián Isaza 
+**Institución:** IU Digital de Antioquia  
+**Asignatura:** Ingeniería Web  
+**Fecha de Entrega:** Noviembre 4, 2025  
 **Versión:** 1.0
 
 ---
