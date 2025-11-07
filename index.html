@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CrediAntioquia - Plataforma de gestión de solicitudes de crédito">
+    <meta name="description" content="CrediAntioquia - Catálogo de Créditos">
     <title>CrediAntioquia - Catálogo de Créditos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación Principal -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Principal">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img">
-                </a>
-            </div>
+            <a href="index.html" class="logo" aria-label="Inicio">
+                <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img" />
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Inicio</a></li>
                 <li><a href="simulador.html" class="nav-link">Simulador</a></li>
-                <li><a href="solicitar.html" class="nav-link btn-solicitar">Solicitar Crédito</a></li>
+                <li><a href="solicitar.html" class="nav-link">Solicitar Crédito</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header Hero -->
     <header class="hero">
         <div class="hero-content">
             <h1>Bienvenido a CrediAntioquia</h1>
@@ -33,78 +33,72 @@
         </div>
     </header>
 
-    <!-- Sección Principal de Productos -->
     <main>
         <section class="productos-section" id="productos">
             <div class="container">
                 <h2>Nuestros Productos Crediticios</h2>
-                <p class="section-subtitle">Elige el crédito que mejor se adapte a tus necesidades financieras</p>
-                
-                <div class="productos-grid" id="productos-grid">
-                    <!-- Las tarjetas se cargarán aquí dinámicamente -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Características -->
-        <section class="features-section">
-            <div class="container">
-                <h2>¿Por qué elegirnos?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">⚡</span>
-                        <h3>Aprobación Rápida</h3>
-                        <p>Respuesta en menos de 24 horas</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">🔒</span>
-                        <h3>Seguridad</h3>
-                        <p>Datos encriptados y protegidos</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">👥</span>
-                        <h3>Asesoría</h3>
-                        <p>Equipo de expertos disponible</p>
-                    </div>
-                    <div class="feature-card">
-                        <span class="feature-icon">📱</span>
-                        <h3>Disponible 24/7</h3>
-                        <p>Acceso desde cualquier dispositivo</p>
-                    </div>
+                <div class="productos-grid">
+                    <article class="producto-card cat-libre" tabindex="0">
+                        <h3>Crédito Libre Inversión</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 8.5% - 10.5% anual</li>
+                            <li><strong>Monto:</strong> $1.000.000 - $50.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 60 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
+                    <article class="producto-card cat-vehiculo" tabindex="0">
+                        <h3>Crédito Vehículo</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 7.8% - 9.9%</li>
+                            <li><strong>Monto:</strong> $5.000.000 - $120.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 72 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
+                    <article class="producto-card cat-vivienda" tabindex="0">
+                        <h3>Crédito Vivienda</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 6.2% - 8.0%</li>
+                            <li><strong>Monto:</strong> $30.000.000 - $400.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 240 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
+                    <article class="producto-card cat-educativo" tabindex="0">
+                        <h3>Crédito Educativo</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 5.5% - 7.2%</li>
+                            <li><strong>Monto:</strong> $2.000.000 - $80.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 84 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
+                    <article class="producto-card cat-empresarial" tabindex="0">
+                        <h3>Crédito Empresarial</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 9.0% - 12.0%</li>
+                            <li><strong>Monto:</strong> $10.000.000 - $800.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 120 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
+                    <article class="producto-card cat-micro" tabindex="0">
+                        <h3>Microcrédito</h3>
+                        <ul class="producto-meta">
+                            <li><strong>Tasa:</strong> 10.0% - 14.0%</li>
+                            <li><strong>Monto:</strong> $500.000 - $15.000.000</li>
+                            <li><strong>Plazo:</strong> Hasta 36 meses</li>
+                        </ul>
+                        <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>CrediAntioquia</h4>
-                    <p>Soluciones de crédito confiables y accesibles</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="simulador.html">Simulador</a></li>
-                        <li><a href="solicitar.html">Solicitar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p>Email: info@CrediAntioquia.com</p>
-                    <p>Teléfono: +57 (1) 123-4567</p>
-                    <p>Horario: Lunes - Viernes 8am - 6pm</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
-            </div>
-        </div>
+        <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

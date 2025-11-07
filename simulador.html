@@ -8,87 +8,110 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación Principal -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Principal">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img">
-                </a>
-            </div>
+            <a href="index.html" class="logo" aria-label="Inicio">
+                <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img" />
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="simulador.html" class="nav-link active">Simulador</a></li>
-                <li><a href="solicitar.html" class="nav-link btn-solicitar">Solicitar Crédito</a></li>
+                <li><a href="solicitar.html" class="nav-link">Solicitar Crédito</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Sección Simulador -->
-    <main class="simulador-section">
-        <div class="container">
-            <div class="simulador-header">
-                <h2>Simulador de Créditos</h2>
-                <p>Encuentra y simula el crédito que se ajuste a tus necesidades</p>
-            </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Simulador de Créditos</h1>
+            <p>Encuentra y simula el crédito que se ajuste a tus necesidades</p>
+        </div>
+    </header>
 
-            <!-- Filtros -->
-            <div class="filtros-container">
-                <div class="filtros-grid">
-                    <div class="filtro-group">
-                        <label for="search-producto">🔍 Buscar Crédito</label>
-                        <input type="text" id="search-producto" placeholder="Ej: Vivienda, Vehículo...">
-                    </div>
-                    <div class="filtro-group">
-                        <label for="monto-min">💰 Monto Mínimo (COP)</label>
-                        <input type="number" id="monto-min" placeholder="Monto mínimo">
-                    </div>
-                    <div class="filtro-group">
-                        <label for="monto-max">💰 Monto Máximo (COP)</label>
-                        <input type="number" id="monto-max" placeholder="Monto máximo">
+    <main>
+        <section class="simulador-section">
+            <div class="container">
+                <h2>Simulador y Filtros</h2>
+
+                <!-- Checkboxes ocultos que controlan el filtrado CSS -->
+                <input type="checkbox" id="tipo-libre" name="tipo-libre" class="visually-hidden" hidden>
+                <input type="checkbox" id="tipo-vehiculo" name="tipo-vehiculo" class="visually-hidden" hidden>
+                <input type="checkbox" id="tipo-vivienda" name="tipo-vivienda" class="visually-hidden" hidden>
+                <input type="checkbox" id="tipo-educativo" name="tipo-educativo" class="visually-hidden" hidden>
+                <input type="checkbox" id="tipo-empresarial" name="tipo-empresarial" class="visually-hidden" hidden>
+
+                <div class="simulador-wrap">
+                    <aside class="panel filtros" aria-label="Filtros">
+                        <h3>Tipos de crédito</h3>
+                        <p style="margin-top:-6px;color:#475569">Selecciona uno o varios para refinar los resultados.</p>
+                        <div class="grupo">
+                            <label for="tipo-libre"> Libre Inversión</label>
+                            <label for="tipo-vehiculo"> Vehículo</label>
+                            <label for="tipo-vivienda"> Vivienda</label>
+                            <label for="tipo-educativo"> Educativo</label>
+                            <label for="tipo-empresarial"> Empresarial</label>
+                        </div>
+                        <small>Tip: Sin filtros marcados se muestran todos.</small>
+                    </aside>
+
+                    <div class="catalogo productos-grid" aria-live="polite">
+                        <article class="producto-card cat-libre" tabindex="0">
+                            <h3>Crédito Libre Inversión</h3>
+                            <ul class="producto-meta">
+                                <li><strong>Tasa:</strong> 8.5% - 10.5% anual</li>
+                                <li><strong>Monto:</strong> $1.000.000 - $50.000.000</li>
+                                <li><strong>Plazo:</strong> Hasta 60 meses</li>
+                            </ul>
+                            <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                        </article>
+                        <article class="producto-card cat-vehiculo" tabindex="0">
+                            <h3>Crédito Vehículo</h3>
+                            <ul class="producto-meta">
+                                <li><strong>Tasa:</strong> 7.8% - 9.9%</li>
+                                <li><strong>Monto:</strong> $5.000.000 - $120.000.000</li>
+                                <li><strong>Plazo:</strong> Hasta 72 meses</li>
+                            </ul>
+                            <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                        </article>
+                        <article class="producto-card cat-vivienda" tabindex="0">
+                            <h3>Crédito Vivienda</h3>
+                            <ul class="producto-meta">
+                                <li><strong>Tasa:</strong> 6.2% - 8.0%</li>
+                                <li><strong>Monto:</strong> $30.000.000 - $400.000.000</li>
+                                <li><strong>Plazo:</strong> Hasta 240 meses</li>
+                            </ul>
+                            <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                        </article>
+                        <article class="producto-card cat-educativo" tabindex="0">
+                            <h3>Crédito Educativo</h3>
+                            <ul class="producto-meta">
+                                <li><strong>Tasa:</strong> 5.5% - 7.2%</li>
+                                <li><strong>Monto:</strong> $2.000.000 - $80.000.000</li>
+                                <li><strong>Plazo:</strong> Hasta 84 meses</li>
+                            </ul>
+                            <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                        </article>
+                        <article class="producto-card cat-empresarial" tabindex="0">
+                            <h3>Crédito Empresarial</h3>
+                            <ul class="producto-meta">
+                                <li><strong>Tasa:</strong> 9.0% - 12.0%</li>
+                                <li><strong>Monto:</strong> $10.000.000 - $800.000.000</li>
+                                <li><strong>Plazo:</strong> Hasta 120 meses</li>
+                            </ul>
+                            <a href="solicitar.html" class="btn btn-secondary">Solicitar</a>
+                        </article>
                     </div>
                 </div>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="filtrarProductos()">
-                    🔎 Aplicar Filtros
-                </button>
             </div>
-
-            <!-- Grid de Resultados -->
-            <div class="productos-grid" id="productos-grid">
-                <!-- Los productos se cargarán aquí -->
-            </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>CrediAntioquia</h4>
-                    <p>Soluciones de crédito confiables y accesibles</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="simulador.html">Simulador</a></li>
-                        <li><a href="solicitar.html">Solicitar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p>Email: info@CrediAntioquia.com</p>
-                    <p>Teléfono: +57 (1) 123-4567</p>
-                    <p>Horario: Lunes - Viernes 8am - 6pm</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
-            </div>
-        </div>
+        <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

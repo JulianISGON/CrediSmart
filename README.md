@@ -1,15 +1,37 @@
-# CrediSmart - Proyecto Educativo
+# CrediAntioquia - Proyecto Educativo
 
-CrediSmart es un proyecto **100% educativo** desarrollado como parte de la formación en la **IU Digital de Antioquia**, en la materia de **Ingeniería Web**.
+CrediAntioquia es un proyecto educativo desarrollado como parte de la formación en la **IU Digital de Antioquia**, en la materia de **Ingeniería Web**.
 
-## Propósito del Proyecto
+## Descripción
 
-El objetivo principal de este proyecto es aplicar los conceptos aprendidos en clase para diseñar y desarrollar una plataforma web funcional, utilizando tecnologías modernas como HTML5, CSS3 y JavaScript.
+El objetivo principal de este proyecto es aplicar los conceptos fundamentales de HTML5, CSS3 y diseño responsive para desarrollar las interfaces de usuario de un sistema web de gestión de solicitudes de crédito.
 
-## Integrantes del Equipo
+## Estructura de Archivos
 
-- **Julián Isaza**
-- **Lisa Larrea**
+```
+CrediAntioquia/
+├── index.html           # Página principal - Catálogo de créditos
+├── simulador.html       # Página de simulador y búsqueda
+├── solicitar.html       # Página de formulario de solicitud
+├── styles.css           # Estilos CSS profesionales y responsive
+├── README.md            # Documentación del proyecto
+```
 
+## Instrucciones para Ejecutar el Proyecto
 
+1. Clona este repositorio en tu máquina local.
+2. Abre el archivo `index.html` en tu navegador web.
+3. Navega entre las diferentes páginas usando los enlaces del menú.
 
+## Capturas de Pantalla
+
+Incluye capturas de las tres páginas principales.
+
+## Autor
+
+- Julián Isaza
+- Lisa Larrea
+
+---
+
+**Última actualización:** Noviembre 2025

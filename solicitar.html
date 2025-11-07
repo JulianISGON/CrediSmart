@@ -8,169 +8,101 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación Principal -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Principal">
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img">
-                </a>
-            </div>
+            <a href="index.html" class="logo" aria-label="Inicio">
+                <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img" />
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="simulador.html" class="nav-link">Simulador</a></li>
-                <li><a href="solicitar.html" class="nav-link active btn-solicitar">Solicitar Crédito</a></li>
+                <li><a href="solicitar.html" class="nav-link active">Solicitar Crédito</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Sección Formulario -->
-    <main class="form-section">
-        <div class="container">
-            <div class="form-container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Solicitud de Crédito</h2>
-                <p style="text-align: center; color: var(--gray-color); margin-bottom: 30px;">Completa el formulario con tus datos personales y laborales</p>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Solicitud de Crédito</h1>
+            <p>Completa el formulario para enviar tu solicitud</p>
+        </div>
+    </header>
 
-                <form id="solicitud-form">
-                    <!-- Datos Personales -->
-                    <div style="margin-bottom: 30px;">
-                        <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
-                            👤 Datos Personales
-                        </h3>
+    <main>
+        <section class="form-section">
+            <div class="container">
+                <h2 style="margin:20px 0 8px">Formulario de Solicitud</h2>
+                <p style="margin-top:0;color:#475569">Ingresa tus datos para iniciar el proceso de evaluación del crédito.</p>
+                <form class="solicitud-form" novalidate>
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" placeholder="Ej: Ana Gómez" required>
 
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo *</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez García">
-                        </div>
+                        <label for="cedula">Cédula</label>
+                        <input type="number" id="cedula" placeholder="Ej: 123456789" required>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cedula">Número de Cédula *</label>
-                                <input type="number" id="cedula" name="cedula" required placeholder="1023456789">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo Electrónico *</label>
-                                <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                            </div>
-                        </div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="telefono">Teléfono *</label>
-                                <input type="tel" id="telefono" name="telefono" required placeholder="300-123-4567">
-                            </div>
-                            <div class="form-group">
-                                <label for="ciudad">Ciudad *</label>
-                                <input type="text" id="ciudad" name="ciudad" required placeholder="Bogotá">
-                            </div>
-                        </div>
-                    </div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="Ej: 3001234567" required>
+                    </fieldset>
 
-                    <!-- Datos del Crédito -->
-                    <div style="margin-bottom: 30px;">
-                        <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
-                            💳 Datos del Crédito
-                        </h3>
+                    <fieldset>
+                        <legend>Datos del Crédito</legend>
+                        <label for="tipo-credito">Tipo de Crédito</label>
+                        <select id="tipo-credito">
+                            <option value="libre">Crédito Libre Inversión</option>
+                            <option value="vehiculo">Crédito Vehículo</option>
+                            <option value="vivienda">Crédito Vivienda</option>
+                            <option value="educativo">Crédito Educativo</option>
+                            <option value="empresarial">Crédito Empresarial</option>
+                        </select>
 
-                        <div class="form-group">
-                            <label for="tipo-credito">Tipo de Crédito *</label>
-                            <select id="tipo-credito" name="tipo-credito" required>
-                                <option value="">Selecciona un crédito...</option>
-                            </select>
-                        </div>
+                        <label for="monto">Monto Solicitado</label>
+                        <input type="number" id="monto" placeholder="Ej: 10000000" required>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="monto-solicitado">Monto Solicitado (COP) *</label>
-                                <input type="number" id="monto-solicitado" name="monto-solicitado" required placeholder="10000000">
-                            </div>
-                            <div class="form-group">
-                                <label for="plazo">Plazo en Meses *</label>
-                                <select id="plazo" name="plazo" required>
-                                    <option value="">Selecciona plazo...</option>
-                                    <option value="12">12 meses</option>
-                                    <option value="24">24 meses</option>
-                                    <option value="36">36 meses</option>
-                                    <option value="48">48 meses</option>
-                                    <option value="60">60 meses</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label for="plazo">Plazo en Meses</label>
+                        <select id="plazo">
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                        </select>
 
-                        <div class="form-group">
-                            <label for="destino">Destino del Crédito *</label>
-                            <textarea id="destino" name="destino" required placeholder="Describe para qué usarás el crédito..."></textarea>
-                        </div>
-                    </div>
+                        <label for="destino">Destino del Crédito</label>
+                        <textarea id="destino" rows="4" placeholder="Describe brevemente el uso del dinero"></textarea>
+                    </fieldset>
 
-                    <!-- Datos Laborales -->
-                    <div style="margin-bottom: 30px;">
-                        <h3 style="color: var(--primary-color); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px;">
-                            💼 Datos Laborales
-                        </h3>
+                    <fieldset>
+                        <legend>Datos Laborales</legend>
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" placeholder="Nombre de la empresa" required>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="empresa">Empresa donde trabaja *</label>
-                                <input type="text" id="empresa" name="empresa" required placeholder="Nombre de la empresa">
-                            </div>
-                            <div class="form-group">
-                                <label for="cargo">Cargo *</label>
-                                <input type="text" id="cargo" name="cargo" required placeholder="Tu posición en la empresa">
-                            </div>
-                        </div>
+                        <label for="cargo">Cargo</label>
+                        <input type="text" id="cargo" placeholder="Tu cargo" required>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="ingresos">Ingresos Mensuales (COP) *</label>
-                                <input type="number" id="ingresos" name="ingresos" required placeholder="2000000">
-                            </div>
-                            <div class="form-group">
-                                <label for="antiguedad">Antigüedad Laboral (años) *</label>
-                                <input type="number" id="antiguedad" name="antiguedad" required placeholder="2" min="0">
-                            </div>
-                        </div>
-                    </div>
+                        <label for="ingresos">Ingresos Mensuales</label>
+                        <input type="number" id="ingresos" placeholder="Ej: 2500000" required>
+                    </fieldset>
 
-                    <!-- Botones -->
-                    <div class="form-buttons">
-                        <button type="submit" class="btn-submit">✓ Enviar Solicitud</button>
-                        <button type="reset" class="btn-reset">🔄 Limpiar Formulario</button>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
                     </div>
                 </form>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>CrediAntioquia</h4>
-                    <p>Soluciones de crédito confiables y accesibles</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="simulador.html">Simulador</a></li>
-                        <li><a href="solicitar.html">Solicitar</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p>Email: info@CrediAntioquia.com</p>
-                    <p>Teléfono: +57 (1) 123-4567</p>
-                    <p>Horario: Lunes - Viernes 8am - 6pm</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
-            </div>
-        </div>
+        <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
