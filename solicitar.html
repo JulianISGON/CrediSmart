@@ -5,104 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CrediAntioquia - Solicitar Crédito">
     <title>CrediAntioquia - Solicitar Crédito</title>
+    <link rel="icon" href="logoCrediAntioquia.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brand: { 900:'#081c15',800:'#1b4332',700:'#2d6a4f',500:'#40916c',300:'#74c69d',200:'#95d5b2',100:'#d8f3dc' }, grayz:{100:'#f3f4f6',300:'#e5e7eb'} } } } };
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav class="navbar" aria-label="Principal">
-        <div class="nav-container">
-            <a href="index.html" class="logo" aria-label="Inicio">
-                <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img" />
+<body class="min-h-screen flex flex-col bg-white text-[#0f172a]">
+    <nav class="bg-brand-700 text-white" aria-label="Principal">
+        <div class="max-w-[1100px] mx-auto px-4 py-2 flex items-center justify-between gap-3 relative">
+            <a href="index.html" aria-label="Inicio">
+                <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="max-w-[140px] h-auto" />
             </a>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
-            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
-                <span></span>
-            </label>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="simulador.html" class="nav-link">Simulador</a></li>
-                <li><a href="solicitar.html" class="nav-link active">Solicitar Crédito</a></li>
+            <input type="checkbox" id="nav-toggle" class="peer/nav-toggle nav-toggle" aria-label="Abrir menú" />
+            <label for="nav-toggle" class="nav-toggle-label md:hidden"><span></span></label>
+            <ul class="nav-menu hidden flex-col gap-1 w-[220px] right-0 left-auto top-full mt-2 rounded-xl bg-brand-700 md:flex md:flex-row md:static md:bg-transparent md:mt-0 md:rounded-none md:w-auto md:gap-5 peer-checked/nav-toggle:flex absolute z-50 p-2 shadow-lg">
+                <li><a href="index.html" class="block px-4 py-2 rounded-md hover:bg-white/10">Inicio</a></li>
+                <li><a href="simulador.html" class="block px-4 py-2 rounded-md hover:bg-white/10">Simulador</a></li>
+                <li><a href="solicitar.html" aria-current="page" class="block px-4 py-2 rounded-md hover:bg-white/10">Solicitar Crédito</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Solicitud de Crédito</h1>
-            <p>Completa el formulario para enviar tu solicitud</p>
-        </div>
+    <header class="bg-gradient-to-r from-brand-700 to-brand-800 text-white text-center py-16 px-5">
+        <h1 class="text-4xl font-semibold">Solicitud de Crédito</h1>
+        <p class="text-lg mt-2">Completa el formulario para enviar tu solicitud</p>
     </header>
 
-    <main>
-        <section class="form-section">
-            <div class="container">
-                <h2 style="margin:20px 0 8px">Formulario de Solicitud</h2>
-                <p style="margin-top:0;color:#475569">Ingresa tus datos para iniciar el proceso de evaluación del crédito.</p>
-                <form class="solicitud-form" novalidate>
-                    <fieldset>
-                        <legend>Datos Personales</legend>
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="Ej: Ana Gómez" required>
+    <main class="flex-1">
+        <section class="max-w-[1100px] mx-auto px-4 py-10">
+            <h2 class="text-2xl font-semibold mb-1">Formulario de Solicitud</h2>
+            <p class="text-sm text-gray-600 mb-6">Ingresa tus datos para iniciar el proceso de evaluación del crédito.</p>
 
-                        <label for="cedula">Cédula</label>
-                        <input type="number" id="cedula" placeholder="Ej: 123456789" required>
+            <form class="grid gap-4" novalidate>
+                <fieldset class="border border-grayz-300 rounded-xl p-5">
+                    <legend class="px-2 text-brand-800 font-semibold">Datos Personales</legend>
+                    <label for="nombre" class="block mt-2 mb-1">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej: Ana Gómez" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                    <label for="cedula" class="block mt-3 mb-1">Cédula</label>
+                    <input type="number" id="cedula" placeholder="Ej: 123456789" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="Ej: 3001234567" required>
-                    </fieldset>
+                    <label for="email" class="block mt-3 mb-1">Email</label>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                    <fieldset>
-                        <legend>Datos del Crédito</legend>
-                        <label for="tipo-credito">Tipo de Crédito</label>
-                        <select id="tipo-credito">
-                            <option value="libre">Crédito Libre Inversión</option>
-                            <option value="vehiculo">Crédito Vehículo</option>
-                            <option value="vivienda">Crédito Vivienda</option>
-                            <option value="educativo">Crédito Educativo</option>
-                            <option value="empresarial">Crédito Empresarial</option>
-                        </select>
+                    <label for="telefono" class="block mt-3 mb-1">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="Ej: 3001234567" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </fieldset>
 
-                        <label for="monto">Monto Solicitado</label>
-                        <input type="number" id="monto" placeholder="Ej: 10000000" required>
+                <fieldset class="border border-grayz-300 rounded-xl p-5">
+                    <legend class="px-2 text-brand-800 font-semibold">Datos del Crédito</legend>
+                    <label for="tipo-credito" class="block mt-2 mb-1">Tipo de Crédito</label>
+                    <select id="tipo-credito" class="w-full px-3 py-2 border border-grayz-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <option value="libre">Crédito Libre Inversión</option>
+                        <option value="vehiculo">Crédito Vehículo</option>
+                        <option value="vivienda">Crédito Vivienda</option>
+                        <option value="educativo">Crédito Educativo</option>
+                        <option value="empresarial">Crédito Empresarial</option>
+                    </select>
 
-                        <label for="plazo">Plazo en Meses</label>
-                        <select id="plazo">
-                            <option value="12">12</option>
-                            <option value="24">24</option>
-                            <option value="36">36</option>
-                            <option value="48">48</option>
-                            <option value="60">60</option>
-                        </select>
+                    <label for="monto" class="block mt-3 mb-1">Monto Solicitado</label>
+                    <input type="number" id="monto" placeholder="Ej: 10000000" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                        <label for="destino">Destino del Crédito</label>
-                        <textarea id="destino" rows="4" placeholder="Describe brevemente el uso del dinero"></textarea>
-                    </fieldset>
+                    <label for="plazo" class="block mt-3 mb-1">Plazo en Meses</label>
+                    <select id="plazo" class="w-full px-3 py-2 border border-grayz-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                        <option value="48">48</option>
+                        <option value="60">60</option>
+                    </select>
 
-                    <fieldset>
-                        <legend>Datos Laborales</legend>
-                        <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" placeholder="Nombre de la empresa" required>
+                    <label for="destino" class="block mt-3 mb-1">Destino del Crédito</label>
+                    <textarea id="destino" rows="4" placeholder="Describe brevemente el uso del dinero" class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                </fieldset>
 
-                        <label for="cargo">Cargo</label>
-                        <input type="text" id="cargo" placeholder="Tu cargo" required>
+                <fieldset class="border border-grayz-300 rounded-xl p-5">
+                    <legend class="px-2 text-brand-800 font-semibold">Datos Laborales</legend>
+                    <label for="empresa" class="block mt-2 mb-1">Empresa</label>
+                    <input type="text" id="empresa" placeholder="Nombre de la empresa" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                        <label for="ingresos">Ingresos Mensuales</label>
-                        <input type="number" id="ingresos" placeholder="Ej: 2500000" required>
-                    </fieldset>
+                    <label for="cargo" class="block mt-3 mb-1">Cargo</label>
+                    <input type="text" id="cargo" placeholder="Tu cargo" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
 
-                    <div style="display:flex;gap:12px;flex-wrap:wrap">
-                        <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
-                        <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
-                    </div>
-                </form>
-            </div>
+                    <label for="ingresos" class="block mt-3 mb-1">Ingresos Mensuales</label>
+                    <input type="number" id="ingresos" placeholder="Ej: 2500000" required class="w-full px-3 py-2 border border-grayz-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </fieldset>
+
+                <div class="flex gap-3 flex-wrap mt-1">
+                    <button type="submit" class="px-4 py-2 rounded-lg bg-brand-500 text-white hover:brightness-95">Enviar Solicitud</button>
+                    <button type="reset" class="px-4 py-2 rounded-lg bg-brand-300 text-[#083b2b] hover:brightness-95">Limpiar Formulario</button>
+                </div>
+            </form>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
+    <footer class="bg-brand-800 text-white text-center py-6 mt-10">
+        <p class="text-sm">&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>

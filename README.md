@@ -23,10 +23,6 @@ CrediAntioquia/
 2. Abre el archivo `index.html` en tu navegador web.
 3. Navega entre las diferentes páginas usando los enlaces del menú.
 
-## Capturas de Pantalla
-
-Incluye capturas de las tres páginas principales.
-
 ## Autor
 
 - Julián Isaza
