@@ -3,179 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simulador de créditos - Calcula tu cuota mensual">
-    <title>Simulador de Créditos | CrediSmart</title>
+    <meta name="description" content="CrediAntioquia - Simulador de Créditos">
+    <title>CrediAntioquia - Simulador</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navegación Principal -->
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <a href="index.html">💳 CrediSmart</a>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logoCrediAntioquia.png" alt="Logo CrediAntioquia" class="logo-img">
+                </a>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="simulador.html" class="nav-link active">Simulador</a>
-                </li>
-                <li class="nav-item">
-                    <a href="solicitar.html" class="nav-link btn-solicitar">Solicitar Crédito</a>
-                </li>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="simulador.html" class="nav-link active">Simulador</a></li>
+                <li><a href="solicitar.html" class="nav-link btn-solicitar">Solicitar Crédito</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="hero-small">
-        <div class="hero-content">
-            <h1>Simulador de Créditos</h1>
-            <p>Calcula tu cuota mensual y conoce los detalles de tu crédito</p>
+    <!-- Sección Simulador -->
+    <main class="simulador-section">
+        <div class="container">
+            <div class="simulador-header">
+                <h2>Simulador de Créditos</h2>
+                <p>Encuentra y simula el crédito que se ajuste a tus necesidades</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-container">
+                <div class="filtros-grid">
+                    <div class="filtro-group">
+                        <label for="search-producto">🔍 Buscar Crédito</label>
+                        <input type="text" id="search-producto" placeholder="Ej: Vivienda, Vehículo...">
+                    </div>
+                    <div class="filtro-group">
+                        <label for="monto-min">💰 Monto Mínimo (COP)</label>
+                        <input type="number" id="monto-min" placeholder="Monto mínimo">
+                    </div>
+                    <div class="filtro-group">
+                        <label for="monto-max">💰 Monto Máximo (COP)</label>
+                        <input type="number" id="monto-max" placeholder="Monto máximo">
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="filtrarProductos()">
+                    🔎 Aplicar Filtros
+                </button>
+            </div>
+
+            <!-- Grid de Resultados -->
+            <div class="productos-grid" id="productos-grid">
+                <!-- Los productos se cargarán aquí -->
+            </div>
         </div>
-    </header>
-
-    <!-- Contenido Principal -->
-    <main>
-        <section class="simulador-section">
-            <div class="container">
-                <div class="simulador-container">
-                    <!-- Formulario de Simulación -->
-                    <div class="simulador-form-container">
-                        <h2>Configura tu Simulación</h2>
-                        
-                        <form class="simulador-form" id="simuladorForm">
-                            <!-- Seleccionar Tipo de Crédito -->
-                            <div class="form-group">
-                                <label for="tipoCredito">Tipo de Crédito *</label>
-                                <select id="tipoCredito" name="tipoCredito" required>
-                                    <option value="">Selecciona un tipo de crédito</option>
-                                    <option value="personal">Crédito Personal</option>
-                                    <option value="automotriz">Crédito Automotriz</option>
-                                    <option value="hipotecario">Crédito Hipotecario</option>
-                                    <option value="empresarial">Crédito Empresarial</option>
-                                    <option value="educativo">Crédito Educativo</option>
-                                    <option value="linea">Línea de Crédito</option>
-                                </select>
-                            </div>
-
-                            <!-- Monto del Crédito -->
-                            <div class="form-group">
-                                <label for="monto">Monto Solicitado ($) *</label>
-                                <input type="range" id="montoRange" name="montoRange" min="5000" max="500000" step="1000" value="25000">
-                                <input type="number" id="monto" name="monto" placeholder="25000" required>
-                                <small id="montoRango" class="form-text">Monto mínimo: $5,000 - Máximo: $500,000</small>
-                            </div>
-
-                            <!-- Plazo en Meses -->
-                            <div class="form-group">
-                                <label for="plazo">Plazo (meses) *</label>
-                                <input type="range" id="plazoRange" name="plazoRange" min="12" max="120" step="12" value="60">
-                                <input type="number" id="plazo" name="plazo" placeholder="60" required>
-                                <small id="plazoRango" class="form-text">Mínimo 12 meses - Máximo 120 meses</small>
-                            </div>
-
-                            <!-- Tasa de Interés -->
-                            <div class="form-group">
-                                <label for="tasa">Tasa de Interés Anual (%) *</label>
-                                <input type="number" id="tasa" name="tasa" placeholder="10" step="0.01" required>
-                                <small class="form-text">Las tasas varían según el tipo de crédito y perfil crediticio</small>
-                            </div>
-
-                            <!-- Botones -->
-                            <div class="form-actions">
-                                <button type="button" class="btn-primary" id="simularBtn">Simular</button>
-                                <button type="reset" class="btn-secondary">Limpiar</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Resultados de la Simulación -->
-                    <div class="simulador-results-container">
-                        <h2>Resultado de tu Simulación</h2>
-                        
-                        <div id="resultadosSimulacion" class="resultados-simulacion hidden">
-                            <div class="resultado-principal">
-                                <div class="resultado-item">
-                                    <span class="resultado-label">Cuota Mensual</span>
-                                    <span class="resultado-valor" id="cuotaMensual">$0.00</span>
-                                </div>
-                                <div class="resultado-item">
-                                    <span class="resultado-label">Total a Pagar</span>
-                                    <span class="resultado-valor" id="totalPagar">$0.00</span>
-                                </div>
-                                <div class="resultado-item">
-                                    <span class="resultado-label">Total Intereses</span>
-                                    <span class="resultado-valor intereses" id="totalIntereses">$0.00</span>
-                                </div>
-                            </div>
-
-                            <!-- Tabla de Amortización (primeras 6 cuotas) -->
-                            <div class="tabla-amortizacion">
-                                <h3>Tabla de Amortización (Primeras 6 cuotas)</h3>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Cuota</th>
-                                            <th>Pago</th>
-                                            <th>Capital</th>
-                                            <th>Intereses</th>
-                                            <th>Saldo</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tablaAmortizacion">
-                                        <!-- Se llena con JavaScript -->
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- Botón para Solicitar -->
-                            <a href="solicitar.html" class="btn-primary btn-block">Solicitar este Crédito</a>
-                        </div>
-
-                        <!-- Mensaje cuando no hay simulación -->
-                        <div id="mensajeSinSimulacion" class="mensaje-info">
-                            <p>👆 Completa el formulario y haz clic en "Simular" para ver los resultados</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Información -->
-        <section class="info-section">
-            <div class="container">
-                <h2>¿Cómo usar el Simulador?</h2>
-                <div class="info-cards">
-                    <div class="info-card">
-                        <span class="info-number">1</span>
-                        <h3>Selecciona el tipo de crédito</h3>
-                        <p>Elige entre nuestros 6 productos disponibles según tus necesidades</p>
-                    </div>
-                    <div class="info-card">
-                        <span class="info-number">2</span>
-                        <h3>Ingresa el monto deseado</h3>
-                        <p>Especifica cuánto dinero necesitas dentro de los límites permitidos</p>
-                    </div>
-                    <div class="info-card">
-                        <span class="info-number">3</span>
-                        <h3>Define el plazo</h3>
-                        <p>Elige en cuántos meses deseas pagar tu crédito</p>
-                    </div>
-                    <div class="info-card">
-                        <span class="info-number">4</span>
-                        <h3>Revisa los resultados</h3>
-                        <p>Visualiza tu cuota mensual y amortización completa</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -183,29 +65,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>CrediSmart</h4>
-                    <p>Soluciones de crédito confiables y accesibles para todos</p>
+                    <h4>CrediAntioquia</h4>
+                    <p>Soluciones de crédito confiables y accesibles</p>
                 </div>
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="simulador.html">Simulador</a></li>
-                        <li><a href="solicitar.html">Solicitar Crédito</a></li>
+                        <li><a href="solicitar.html">Solicitar</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>Email: info@CrediSmart.com</p>
-                    <p>Teléfono: +1 (555) 123-4567</p>
-                    <p>Horario: Lunes - Viernes, 8am - 6pm</p>
+                    <p>Email: info@CrediAntioquia.com</p>
+                    <p>Teléfono: +57 (1) 123-4567</p>
+                    <p>Horario: Lunes - Viernes 8am - 6pm</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 CrediSmart. Todos los derechos reservados.</p>
+                <p>&copy; 2025 CrediAntioquia. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
