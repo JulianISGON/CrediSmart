@@ -174,6 +174,9 @@ npm run preview
 ### Formulario de Solicitud
 ![Solicitar](./screenshots/solicitar.png)
 
+### Funcionamiento de la simulación
+![Simulación](./screenshots/funcionsimulador.png)
+
 ## 🔄 Commits Realizados
 
 1. ✅ Configuración inicial de React con Vite
